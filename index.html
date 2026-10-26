@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b6ff00">
+<title>NASTYA_OS — interactive portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines"></div>
+<header class="topbar">
+  <a class="system-name" href="#desktop"><span class="sys-icon">N_</span> NASTYA_OS <small>v.02.6</small></a>
+  <div class="top-center"><span class="signal"></span> PORTFOLIO SYSTEM ONLINE</div>
+  <div class="top-right"><span id="clock">00:00:00</span><button id="soundToggle" class="tiny-button" type="button">SOUND: OFF</button></div>
+</header>
+
+<main id="desktop" class="desktop">
+  <div class="desktop-label"><span>USER: ANASTASIA FIGOL</span><span>PERSONAL INTERFACE / CLICK ANY WINDOW</span></div>
+  <section class="welcome">
+    <div class="welcome-left">
+      <div class="tag">INDEPENDENT DEVELOPER / FILE 001</div>
+      <h1>WELCOME<br>TO MY<br><span>WEIRD LITTLE</span><br>INTERNET.</h1>
+      <p>Я Настя. Пишу на Python, приручаю API и превращаю любопытство в работающие штуки.</p>
+      <button id="bootBtn" class="boot-button" type="button"><span>▶</span> INITIALIZE EXPERIENCE</button>
+    </div>
+    <div class="welcome-right">
+      <div class="big-orb"><div class="orb-inner"><span>N!</span></div><span class="orb-ring ring-a"></span><span class="orb-ring ring-b"></span><span class="orb-cross cross-a">+</span><span class="orb-cross cross-b">×</span></div>
+      <div class="floating-label label-a">PYTHON<br>CORE / 01</div>
+      <div class="floating-label label-b">CURIOSITY<br>LEVEL: HIGH</div>
+      <div class="pixel-cat" aria-hidden="true">=^._.^=</div>
+    </div>
+  </section>
+
+  <section class="desktop-grid" id="windows">
+    <button class="desktop-icon" data-window="aboutWindow" type="button"><span class="folder-icon folder-pink">✿</span><span>ABOUT_ME.exe</span></button>
+    <button class="desktop-icon" data-window="projectsWindow" type="button"><span class="folder-icon folder-lime">⌘</span><span>PROJECTS.dir</span></button>
+    <button class="desktop-icon" data-window="skillsWindow" type="button"><span class="folder-icon folder-blue">▦</span><span>SKILLS.sys</span></button>
+    <button class="desktop-icon" data-window="contactWindow" type="button"><span class="folder-icon folder-white">✉</span><span>CONTACT.txt</span></button>
+  </section>
+
+  <section class="console-panel">
+    <div class="console-head"><span><i></i><i></i><i></i> NASTYA://PORTFOLIO</span><span>INTERACTIVE CONSOLE</span></div>
+    <div class="console-output" id="consoleOutput">
+      <p><span class="green">system</span> <span class="dim">— boot sequence complete.</span></p>
+      <p><span class="green">hint</span> <span class="dim">— click a desktop icon or try a command below.</span></p>
+    </div>
+    <form id="commandForm" class="command-form">
+      <label for="commandInput">visitor@nastya:~$</label>
+      <input id="commandInput" autocomplete="off" placeholder="type help and press enter..." aria-label="Введите команду">
+      <button type="submit">RUN ↵</button>
+    </form>
+    <div class="command-hints"><button data-command="help" type="button">help</button><button data-command="about" type="button">about</button><button data-command="projects" type="button">projects</button><button data-command="skills" type="button">skills</button><button data-command="contact" type="button">contact</button><button data-command="clear" type="button">clear</button></div>
+  </section>
+  <div class="bottom-status"><span><i></i> ALL SYSTEMS NOMINAL</span><span>MADE WITH ☻ AND PYTHON DREAMS</span><span>© 2026 NASTYA_OS</span></div>
+</main>
+
+<div class="window-backdrop" id="windowBackdrop"></div>
+<section class="app-window" id="aboutWindow" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+  <div class="window-title"><span><b class="window-app-icon">✿</b> ABOUT_ME.exe</span><button class="close-window" type="button" aria-label="Закрыть">×</button></div>
+  <div class="window-content about-window-content"><div class="mini-avatar">N<span>!</span></div><div><div class="overline">USER PROFILE / 001</div><h2 id="aboutTitle">Привет, я Настя.</h2><p>Начинающий Python Backend Developer. Изучаю Python, асинхронное программирование и работу с API, создаю учебные проекты и постепенно собираю своё портфолио.</p><p>До кода — работа с людьми в чат-поддержке. Поэтому умею внимательно читать запросы, разбирать проблемы и сохранять спокойствие, когда баг решил стать главным героем дня.</p><div class="window-sticker">SOFT LOOK<br>HARD LOGIC ✳</div></div></div>
+</section>
+
+<section class="app-window wide-window" id="projectsWindow" role="dialog" aria-modal="true" aria-labelledby="projectsTitle">
+  <div class="window-title"><span><b class="window-app-icon lime-icon">⌘</b> PROJECTS.dir</span><button class="close-window" type="button" aria-label="Закрыть">×</button></div>
+  <div class="window-content"><div class="overline">SELECTED WORK / CLICK TO EXPLORE</div><h2 id="projectsTitle">Проекты и эксперименты</h2>
+    <div class="project-tabs"><button class="project-tab active" data-project="bot" type="button">01 / SEARCH BOT</button><button class="project-tab" data-project="expense" type="button">02 / EXPENSE TRACKER</button><button class="project-tab" data-project="url" type="button">03 / URL SHORTENER</button></div>
+    <div class="project-detail" id="projectDetail"><div class="project-preview terminal-preview"><span>nastya@dev ~ %</span><br>python bot.py<br><em>✓ external API connected</em><br><em>✓ JSON parsed</em><br><em>✓ async loop running</em></div><div><span class="project-status">● EXISTING PROJECT</span><h3>Telegram Search Bot</h3><p>Telegram-бот для поиска информации через внешний API. В проекте использованы Python, aiogram, aiohttp и асинхронные запросы.</p><div class="tech-pills"><span>PYTHON</span><span>AIOGRAM</span><span>AIOHTTP</span></div><a class="window-link" href="https://github.com/Nyashasya/competitive_search_bot_beginner" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div></div>
+    <p class="small-disclaimer">Expense Tracker и URL Shortener пока представлены как концепции — не готовые проекты.</p>
+  </div>
+</section>
+
+<section class="app-window" id="skillsWindow" role="dialog" aria-modal="true" aria-labelledby="skillsTitle">
+  <div class="window-title"><span><b class="window-app-icon blue-icon">▦</b> SKILLS.sys</span><button class="close-window" type="button" aria-label="Закрыть">×</button></div>
+  <div class="window-content"><div class="overline">CURRENT TOOLBOX</div><h2 id="skillsTitle">Мой стек</h2><p class="small-disclaimer">Индикаторы — визуальная навигация, не объективная оценка уровня.</p>
+    <div class="skill-meter"><div><span>Python</span><span>IN PROGRESS</span></div><div class="meter"><i style="width:72%"></i></div></div>
+    <div class="skill-meter"><div><span>HTTP / REST API / JSON</span><span>IN PROGRESS</span></div><div class="meter"><i style="width:65%"></i></div></div>
+    <div class="skill-meter"><div><span>asyncio / aiohttp</span><span>IN PROGRESS</span></div><div class="meter"><i style="width:58%"></i></div></div>
+    <div class="skill-meter"><div><span>aiogram</span><span>PROJECT PRACTICE</span></div><div class="meter"><i style="width:62%"></i></div></div>
+    <div class="skill-meter"><div><span>Git / GitHub</span><span>IN PROGRESS</span></div><div class="meter"><i style="width:60%"></i></div></div>
+    <div class="skill-meter"><div><span>SQL / PostgreSQL</span><span>VERIFY LEVEL</span></div><div class="meter"><i style="width:35%"></i></div></div>
+  </div>
+</section>
+
+<section class="app-window" id="contactWindow" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+  <div class="window-title"><span><b class="window-app-icon">✉</b> CONTACT.txt</span><button class="close-window" type="button" aria-label="Закрыть">×</button></div>
+  <div class="window-content"><div class="overline">NEW CONNECTION REQUEST</div><h2 id="contactTitle">Let’s connect.</h2><p>Рассматриваю junior-вакансии и стажировки в Python Backend. Буду рада познакомиться с командами, которым интересен начинающий разработчик с желанием учиться.</p><a class="contact-link" href="https://github.com/Nyashasya" target="_blank" rel="noreferrer">GitHub profile ↗</a><a class="contact-link" href="mailto:gitnyashasya@gmail.com">Email ↗</</div>
+</section>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
